@@ -158,12 +158,13 @@ def calculator(first_num: float, second_num: float, operation: str) -> dict:
 def get_stock_price(symbol: str) -> dict:
     # stock_api_key=os.environ.get('STOCK_API_KEY')
     # for streamlit
-    stock_api_key=st.secrets['STOCK_API_KEY']
     """
     Get the latest stock price for a company symbol.
     Provide the stock symbol (e.g., AAPL, TSLA, GOOGL).
     Returns current price and trading information.
     """
+    stock_api_key=st.secrets['STOCK_API_KEY']
+    
     url = (
         "https://www.alphavantage.co/query"
         f"?function=GLOBAL_QUOTE&symbol={symbol}&apikey={stock_api_key}"
